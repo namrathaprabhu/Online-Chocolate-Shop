@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bertha's Deluxe Chocolate Store</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="proj4.css">
+    <script type="text/javascript" src="proj4.js" ></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <script type="text/javascript" src="ajax_get_lib.js"></script>
+    <script type="text/javascript" src="ajax_populate_page.js"></script>
+    <script type="text/javascript" src="shopping_cart.js"></script>
+    <script type="text/javascript" src="proj4_example.js"></script> 
+           
+</head>
+
+<!-- 
+    Namratha Prabhu
+    CS545 Fall 2017
+    820868159
+--> 
+
+
+<body>
+<body>
+<nav class=" navbar navbar-custom navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header ">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://jadran.sdsu.edu/~jadrn047/proj4/index.html" class="navbar-brand">Bertha's</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-nav-demo">
+        <ul class="nav navbar-nav ">
+            <li class="spacing"><a href="http://jadran.sdsu.edu/~jadrn047/proj4/index.html">Home</a></li>
+            <li class="spacing"><a href="http://jadran.sdsu.edu/~jadrn047/proj4/products.html">Products</a></li>
+            <li class="spacing"><a href="http://jadran.sdsu.edu/~jadrn047/proj4/cart.html">Order Online</a></li>
+            <li class="spacing"><a href="http://jadran.sdsu.edu/~jadrn047/proj4/aboutus.html">About us</a></li>
+            <li class="spacing"><a href="http://jadran.sdsu.edu/~jadrn047/proj4/contact.html">Contact</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right ">
+            <li><a href="http://jadran.sdsu.edu/~jadrn047/proj4/cart.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Cart <span id="count">0</span></a></li>
+        </ul>
+    </div>
+
+        </div>
+</nav>
+
+		<div class="contacthead"> <h1> <br> Bertha's Deluxe Chocolate Store </br> </h1></div>
+<br>
+
+
+<div class="container">
+   
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img class="caro-image" src="https://www.burdickchocolate.com/Images/Categories/HOLCH.jpg" alt="Los Angeles" style="width:100%;" style="height: 284px;">
+        <div class="carousel-caption">
+				<br/>
+				<h3>Perfect Holiday Assortment</h3>
+				<p>Give a delicious gift of Christmas chocolates from Bertha's . Everyone loves a gift of the finest gourmet organic chocolates under the tree or in their stocking.</p>
+			</div>
+      </div>
+
+      <div class="item">
+        <img class="caro-image" src="http://images.indianexpress.com/2016/10/dark-milk-chocolate_759_thinkstockphotos-613147316.jpg" alt="Chicago" style="width:100%;" style="height: 284px;">
+        <div class="carousel-caption">
+        <br/>
+        <h3>Dark Chocolate Cacao Bar</h3>
+        <p>Sophisticated but approachable, Intense Dark Evening Dream 60% Cacao delivers notes of ripe red fruit and impeccable chocolate intensity, with a rich, round flavor. Share with chocolate lovers who enjoy flavors ranging from bold to more nuanced and delicate. A perfect introduction to dark chocolate, Evening Dream is deeply satisfying and easy-to-love, with plenty of character.
+</p>
+      </div>
+      </div>
+    
+      <div class="item">
+        <img class="caro-image" src="https://specials-images.forbesimg.com/imageserve/618773654/960x0.jpg?fit=scale" alt="New york" style="width:100%;">
+        <div class="carousel-caption">
+        <br/>
+        <h3>Organic Chocolate</h3>
+        <p>Taste organic chocolate made with the love it deserves! Our redesigned line of organic chocolate bars and squares feature bold new flavors like Moka Fleck, as well as best-sellers including Spicy Aztec, Dark Chocolate, and Sea Salt and Almonds. For a soothing taste of home, mix up a mug of Fair Trade Hot Chocolate — and for gourmet results in baking and cooking, try our Organic Unsweetened Cocoa.</p>
+      </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+</div>
+<div class="container cont">
+
+<div class="indextext"> Our Best Selling Products </div> 
+
+
+<div class="row">
+      <div class="col-lg-4 col-sm-6">
+        <div class="thumbnail">
+          <img src="http://jadran.sdsu.edu/~jadrn000/PROJ4_IMAGES/54X99B43C.jpg">
+          <div class="caption">
+        <h3 class="align">Classic Milk Chocolate Assortment</h3>
+        <p>One of our best sellers, this box features an assortment of our most popular milk chocolate candies. Perfect for cooking or baking, but equally delicious as they are. 1 lb.</p>
+        
+      </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-sm-6">
+        <div class="thumbnail">
+          <img class="indeximage" src="http://jadran.sdsu.edu/~jadrn000/PROJ4_IMAGES/85P99Y43A.jpg">
+          <div class="caption">
+        <h3 class="align">Dark Chocolate</h3>
+        <p>Our famous dark chocolate in a candy bar. Semi-sweet dark chocolate with 80% cacao. Perfect for cooking or baking, but equally delicious as they are. 15 oz.</p>
+        
+      </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <div class="thumbnail ">
+          <img src="http://jadran.sdsu.edu/~jadrn000/PROJ4_IMAGES/3J84P89P3.jpg">
+          <div class="caption">
+        <h3 class="align">Milk Butter Chews</h3>
+        <p>This is a caramel lovers dream come true. The perfect texture and chewiness. The perfect mix of buttery salty-sweetness. It just melts in your mouth 1 lb.
+</p>
+        
+      </div>
+        </div>
+      </div>
+  </div>
+      
+     
+      <div class="row row2">
+      <div class="col-lg-4 col-sm-6">
+        <div class="thumbnail space">
+          <img src="http://jadran.sdsu.edu/~jadrn000/PROJ4_IMAGES/55P99Y43B.jpg">
+          <div class="caption">
+        <h3 class="align">Milk Chocolate Bar</h3>
+        <p>The larger size of our famous milk chocolate in a candy bar. Perfect for cooking or baking, but equally delicious as they are. 32 oz (2 lbs).</p>
+        
+      </div>
+        </div>
+      </div>
+
+       <div class="col-lg-4 col-sm-6">
+        <div class="thumbnail space">
+          <img src="http://jadran.sdsu.edu/~jadrn000/PROJ4_IMAGES/1W96T63B8.jpg">
+          <div class="caption">
+        <h3 class="align">Peanut Butter Brittle Bar</h3>
+        <p>It's the perfect combination of our famous, old-fashioned, crunchy peanut brittle and rich, creamy milk chocolate. The perfect snack and party treat. Eight individually wrapped 1 oz. bars per box 8 oz.</p>
+        
+      </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-sm-6">
+        <div class="thumbnail space">
+          <img src="http://jadran.sdsu.edu/~jadrn000/PROJ4_IMAGES/35J74Y99W.jpg">
+          <div class="caption">
+        <h3 class="align">Walnut Squares</h3>
+        <p>This unique piece is a fan favorite! Loaded with fresh English walnut, these squares have a big chocolate flavor. A deliciously different treat 8 oz.</p>
+    </div>
+        
+      </div>
+        </div>
+      </div>
+    </div>
+      </div>
+
+
+
+
+ <footer class="footer" "><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> Bertha's Deluxe Chocolates
+<p> All Rights Reserved</p>
+ </footer>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://jadran.sdsu.edu/jquery/jquery.js"></script>
+</body>
+</html>

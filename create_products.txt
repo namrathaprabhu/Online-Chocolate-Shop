@@ -1,0 +1,15 @@
+use jadrn047;
+
+drop table if exists products;
+
+create table products (
+    id int AUTO_INCREMENT PRIMARY KEY,
+    Date varchar(50) NOT NULL,
+    sku varchar(50) NOT NULL,
+    qty varchar(15) NOT NULL
+    );
+
+INSERT INTO products VALUES(0,'12/18/2017','85P99Y43B','2');
+INSERT INTO products VALUES(0,'12/10/2017','1O94G76Q9','1');
+
+

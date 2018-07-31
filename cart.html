@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bertha's Deluxe Chocolate Store</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="proj4.css">
+    <script type="text/javascript" src="proj4.js" ></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+    <script type="text/javascript" src="ajax_get_lib.js"></script>
+    <script type="text/javascript" src="ajax_populate_page.js"></script>
+    <script type="text/javascript" src="shopping_cart.js"></script>
+    <script type="text/javascript" src="proj4_example.js"></script> 
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <script type="text/javascript" src="form.js"></script>        
+</head>
+<!-- 
+    Namratha Prabhu
+    CS545 Fall 2017
+    820868159
+--> 
+<body>
+<body>
+<nav class=" navbar navbar-custom navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header ">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <!-- <span class="sr-only">Toggle navigation</span> -->
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://jadran.sdsu.edu/~jadrn047/proj4/index.html" class="navbar-brand">Bertha's</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav ">
+            <li class="spacing"><a href="http://jadran.sdsu.edu/~jadrn047/proj4/index.html">Home</a></li>
+            <li class="spacing"><a href="http://jadran.sdsu.edu/~jadrn047/proj4/products.html">Products</a></li>
+            <li class="spacing"><a href="http://jadran.sdsu.edu/~jadrn047/proj4/cart.html">Order Online</a></li>
+            <li class="spacing"><a href="http://jadran.sdsu.edu/~jadrn047/proj4/aboutus.html">About us</a></li>
+            <li class="spacing"><a href="http://jadran.sdsu.edu/~jadrn047/proj4/contact.html">Contact</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right ">
+            <li><a href="http://jadran.sdsu.edu/~jadrn047/proj4/cart.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Cart <span id="count">0</span></a></li>
+        </ul>
+    </div>
+
+        </div>
+</nav>
+
+<div class="contacthead"> <h1> <br> Bertha's Deluxe Chocolate Store </br> </h1></div>
+<br>
+
+<div id="cart"></div>
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title align"><b>Order Check Out Form<b></h4>
+      </div>
+      <div class="modal-body">
+        <!-- <div class="contacthead"> <p class="subhead"><b>Order Check Out Form</b></p></div>  -->
+        
+        <fieldset>
+            <form class="form-inline"
+            id ="form"
+            action="/perl/jadrn047/proj4/read_cookie.cgi"
+          method="post">
+          
+
+                <div class="form-group ">
+                    
+                    <div class="align"> <h3><b>Shipping Address</b></h3></div> 
+                </div>
+                <br>
+                <br>
+                
+                <div class="form-group form-inline">
+                    <label for="fname">First Name:</label>
+                    <input type="text" class="form-control" id="fname" name="fname" size="20">
+                </div>
+
+                <div class="form-group form-inline">
+                    <label for="lname">Last Name:</label>
+                    <input type="text"  class="form-control" id="lname" name="lname" size="20">
+                </div>
+                
+
+                <div class="form-group">
+                    <label for="address1">Address:</label>
+                    <input type="text" class="form-control" id="address1" size="40" name="address1" placeholder="4560 55th Street">
+                </div>
+
+                <div class="form-group">
+                    <label for="address2">Address:</label>
+                    <input type="text" class="form-control" id="address2" size="40" name="address2"  placeholder="Apt W1">
+                </div>
+                <br>
+                
+
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" class="form-control" id="city" name="city" size="20">
+                </div>
+
+                <div class="form-group">
+                    <label for="state">State:</label>
+                    <input type="text" class="form-control" id="state" name="state" size="20">
+                </div>
+
+                <div class="form-group">
+                    <label for="zip">Zip:</label>
+                    <input type="text" class="form-control" id="zip" name="zip" size="5" maxlength="5">
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="text" class="form-control" id="phone" name="phone" size="10" maxlength="10">
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <!-- <input type="checkbox" name="sameaddress" value="sameaddress"> &nbsp;Billing address same as Shipping address
+                </div> -->
+                <label><input type="checkbox" id="sameaddress" /> Billing address same as shipping address</label>
+                </div>
+                
+                <!-- <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    (<input type="text" class="form-control" name="area_phone" id="area_phone" size="3" maxlength="3">)&nbsp;&nbsp;
+                    <input type="text" class="form-control" name="prefix_phone" id="prefix_phone" size="3" maxlength="3" >&nbsp;&nbsp;
+                    <input type="text" class="form-control" name="phone" id="phone" size="4" maxlength="4" >     
+                </div> -->
+                <br>
+                <br>
+                <div class="form-group">
+                    <div class="align"> <h3><b>Billing Address</h3></b></div> 
+                </div>
+                <br>
+                <br>
+                <div class="form-group">
+                    <label for="fname">First Name:</label>
+                    <input type="text" class="form-control" id="b-fname" name="b-fname" size="20">
+                </div>
+
+                <div class="form-group">
+                    <label for="lname">Last Name:</label>
+                    <input type="text"  class="form-control" id="b-lname" name="b-lname" size="20">
+                </div>
+                
+
+                <div class="form-group">
+                    <label for="address1">Address:</label>
+                    <input type="text" class="form-control" id="b-address1" size="40" name="b-address1" placeholder="4560 55th Street">
+                </div>
+
+                <div class="form-group">
+                    <label for="address2">Address:</label>
+                    <input type="text" class="form-control" id="b-address2" size="40" name="b-address2"  placeholder="Apt W1">
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" class="form-control" id="b-city" name="b-city" size="20">
+                </div>
+
+                <div class="form-group">
+                    <label for="state">State:</label>
+                    <input type="text" class="form-control" id="b-state" name="b-state" size="20">
+                </div>
+
+                <div class="form-group">
+                    <label for="zip">Zip:</label>
+                    <input type="text" class="form-control" id="b-zip" name="b-zip" size="5" maxlength="5">
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="text" class="form-control" id="b-phone" name="b-phone" size="10" maxlength="10">
+                </div>
+
+
+                <!-- <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    (<input type="text" class="form-control" name="b-area_phone" id="b-area_phone" size="3" maxlength="3">)&nbsp;&nbsp;
+                    <input type="text" class="form-control" name="b-prefix_phone" id="b-prefix_phone" size="3" maxlength="3" >&nbsp;&nbsp;
+                    <input type="text" class="form-control" name="b-phone" id="b-phone" size="4" maxlength="4" >     
+                </div> -->
+                <br>
+                <br>
+
+                <div class="form-group">
+                    <div class="align"> <h3><b>Payment Details</h3></b></div> 
+                </div>
+                <br>
+                <br>
+                
+                <div class="form-group">
+                    <label for="expmonth">Card Type</label>
+                    <select class="form-control" id="expmonth" name="cardtype">
+                        <option>VISA</option>
+                        <option>MASTERCARD</option>
+                        <option>AMERICAN EXPRESS</option>
+                        <option>DISCOVER</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cardname">Name on Card:</label>
+                    <input type="text" class="form-control" id="cardname" name="cardname" size="20">
+                </div>
+                <div class="form-group">
+                    <label for="cardno">Card Number:</label>
+                    <input type="text" class="form-control" id="cardno" name="cardno" size="16" maxlength="16">
+                </div>
+
+                <div class="form-group">
+                    <label for="expmonth">Expiration:</label>
+                    <input type="text" class="form-control" id="expmonth" name="expmonth" size="2" maxlength="2" placeholder="mm">
+<!--                     <select class="form-control" name="expmonth" id="expmonth">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                    </select> -->
+                    <input type="text" class="form-control" id="expyear" name="expyear" size="4" maxlength="4" placeholder="yyyy">
+                    <!-- <select class="form-control" name="expyear" id="expyear">
+                        <option>2017</option>
+                        <option>2018</option>
+                        <option>2019</option>
+                        <option>2020</option>
+                        <option>2021</option>
+                        <option>2022</option>
+                        <option>2023</option>
+                        <option>2024</option>
+                        <option>2025</option>
+                        <option>2026</option>
+                        <option>2027</option>
+                        <option>2028</option>
+                        <option>2029</option>
+                        <option>2030</option>
+                        <option>2031</option>
+                        <option>2032</option>
+                        <option>2033</option>
+                        <option>2034</option>
+                        <option>2035</option>
+                        <option>2036</option>
+                        <option>2037</option>
+                    </select> -->
+                    <div class="form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" class="form-control" id="cvv" name="cvv" size="3" maxlength="3">
+                </div>
+                </div>
+                
+            </form>
+        </fieldset>
+      </div>
+      <div class="modal-footer">
+        <div id="error_message"></div>
+      <input type="reset" value="clear" id="resetB" class="button"></button>
+      <input type="submit" value ="submit" id="submit" class="button">
+      </div>
+    </div>
+
+  </div>
+</div>
+<footer class="footer" "><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> Bertha's Deluxe Chocolates
+<p> All Rights Reserved</p>
+ </footer>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://jadran.sdsu.edu/jquery/jquery.js"></script>
+</body>
+</html>    
